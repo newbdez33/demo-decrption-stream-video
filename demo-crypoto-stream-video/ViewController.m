@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface ViewController ()
 
@@ -20,10 +21,18 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)player:(id)sender {
+    
+    if (!self.movieController) {
+        //http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4
+        NSURL *u = [NSURL URLWithString:@"http://127.0.0.1:54333/test.mov"];
+        self.movieController = [[MPMoviePlayerController alloc] initWithContentURL:u];
+    }
+    
+    [self.movieController.view setFrame:CGRectMake(0, 0, 320, 320)];
+    [self.movieController play];
+    [self.view addSubview:self.movieController.view];
+    
 }
 
 @end

@@ -8,11 +8,45 @@
 
 #import "AppDelegate.h"
 
+#import "HTTPServer.h"
+#import "DDLog.h"
+#import "DDTTYLogger.h"
+
+// Log levels: off, error, warn, info, verbose
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+
 @implementation AppDelegate
+
+- (void)startServer
+{
+    // Start the server (and check for problems)
+	
+	NSError *error;
+	if([httpServer start:&error])
+	{
+		DDLogInfo(@"Started HTTP Server on port %hu", [httpServer listeningPort]);
+	}
+	else
+	{
+		DDLogError(@"Error starting HTTP Server: %@", error);
+	}
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    httpServer = [[HTTPServer alloc] init];
+    [httpServer setType:@"_http._tcp."];
+    [httpServer setPort:54333];
+    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentPath = [searchPaths lastObject];
+	DDLogInfo(@"Setting document root: %@", documentPath);
+	[httpServer setDocumentRoot:documentPath];
+    
+    [self startServer];
+    
     return YES;
 }
 							
