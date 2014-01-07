@@ -26,7 +26,12 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_WARN; // | HTTP_LOG_FLAG_TRACE;
 {
 	HTTPLogTrace();
     
-	data = [[NSData alloc] initWithBytes:readBuffer length:readBufferOffset];
+    char *buffer = readBuffer;
+    for (int i=0; i<readBufferOffset; i++) {
+        buffer[i] = ~buffer[i];
+    }
+    
+	data = [[NSData alloc] initWithBytes:buffer length:readBufferOffset];
     readBufferOffset = 0;
 	[connection responseHasAvailableData:self];
 }

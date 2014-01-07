@@ -54,7 +54,9 @@
 		CE5A9E84187AC11E00181126 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5A9E83187AC11E00181126 /* MediaPlayer.framework */; };
 		CE5A9E87187AD50D00181126 /* DecrypotoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5A9E86187AD50D00181126 /* DecrypotoLayer.m */; };
 		CE7C505D187AEB55000B1D61 /* HTTPDecryptResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7C505C187AEB55000B1D61 /* HTTPDecryptResponse.m */; };
-		CE7C505F187BC7DB000B1D61 /* big_buck_bunny.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE7C505E187BC375000B1D61 /* big_buck_bunny.mp4 */; };
+		CE7C5067187BCDC3000B1D61 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CE7C5066187BCDC3000B1D61 /* main.c */; };
+		CE7C5069187BCDC3000B1D61 /* cryptx.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE7C5068187BCDC3000B1D61 /* cryptx.1 */; };
+		CE7C506E187BD267000B1D61 /* test.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CE7C506D187BD267000B1D61 /* test.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,19 @@
 			remoteInfo = "demo-crypoto-stream-video";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE7C5062187BCDC3000B1D61 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				CE7C5069187BCDC3000B1D61 /* cryptx.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CE5A9DD3187AB4AC00181126 /* demo-crypoto-stream-video.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "demo-crypoto-stream-video.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +164,10 @@
 		CE5A9E86187AD50D00181126 /* DecrypotoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecrypotoLayer.m; sourceTree = "<group>"; };
 		CE7C505B187AEB55000B1D61 /* HTTPDecryptResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDecryptResponse.h; sourceTree = "<group>"; };
 		CE7C505C187AEB55000B1D61 /* HTTPDecryptResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDecryptResponse.m; sourceTree = "<group>"; };
-		CE7C505E187BC375000B1D61 /* big_buck_bunny.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = big_buck_bunny.mp4; sourceTree = "<group>"; };
+		CE7C5064187BCDC3000B1D61 /* cryptx */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cryptx; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE7C5066187BCDC3000B1D61 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		CE7C5068187BCDC3000B1D61 /* cryptx.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = cryptx.1; sourceTree = "<group>"; };
+		CE7C506D187BD267000B1D61 /* test.mp4 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +194,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE7C5061187BCDC3000B1D61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -184,6 +209,7 @@
 			children = (
 				CE5A9DDC187AB4AC00181126 /* demo-crypoto-stream-video */,
 				CE5A9DFB187AB4AC00181126 /* demo-crypoto-stream-videoTests */,
+				CE7C5065187BCDC3000B1D61 /* cryptx */,
 				CE5A9DD5187AB4AC00181126 /* Frameworks */,
 				CE5A9DD4187AB4AC00181126 /* Products */,
 			);
@@ -194,6 +220,7 @@
 			children = (
 				CE5A9DD3187AB4AC00181126 /* demo-crypoto-stream-video.app */,
 				CE5A9DF4187AB4AC00181126 /* demo-crypoto-stream-videoTests.xctest */,
+				CE7C5064187BCDC3000B1D61 /* cryptx */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,7 +242,7 @@
 		CE5A9DDC187AB4AC00181126 /* demo-crypoto-stream-video */ = {
 			isa = PBXGroup;
 			children = (
-				CE7C505E187BC375000B1D61 /* big_buck_bunny.mp4 */,
+				CE7C506D187BD267000B1D61 /* test.mp4 */,
 				CE5A9E0B187AB4E000181126 /* CocoaHTTPServer */,
 				CE5A9DE5187AB4AC00181126 /* AppDelegate.h */,
 				CE5A9DE6187AB4AC00181126 /* AppDelegate.m */,
@@ -387,6 +414,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		CE7C5065187BCDC3000B1D61 /* cryptx */ = {
+			isa = PBXGroup;
+			children = (
+				CE7C5066187BCDC3000B1D61 /* main.c */,
+				CE7C5068187BCDC3000B1D61 /* cryptx.1 */,
+			);
+			path = cryptx;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -425,6 +461,23 @@
 			productReference = CE5A9DF4187AB4AC00181126 /* demo-crypoto-stream-videoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CE7C5063187BCDC3000B1D61 /* cryptx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE7C506A187BCDC4000B1D61 /* Build configuration list for PBXNativeTarget "cryptx" */;
+			buildPhases = (
+				CE7C5060187BCDC3000B1D61 /* Sources */,
+				CE7C5061187BCDC3000B1D61 /* Frameworks */,
+				CE7C5062187BCDC3000B1D61 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cryptx;
+			productName = cryptx;
+			productReference = CE7C5064187BCDC3000B1D61 /* cryptx */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -454,6 +507,7 @@
 			targets = (
 				CE5A9DD2187AB4AC00181126 /* demo-crypoto-stream-video */,
 				CE5A9DF3187AB4AC00181126 /* demo-crypoto-stream-videoTests */,
+				CE7C5063187BCDC3000B1D61 /* cryptx */,
 			);
 		};
 /* End PBXProject section */
@@ -463,10 +517,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7C505F187BC7DB000B1D61 /* big_buck_bunny.mp4 in Resources */,
 				CE5A9DEF187AB4AC00181126 /* Images.xcassets in Resources */,
 				CE5A9DE1187AB4AC00181126 /* InfoPlist.strings in Resources */,
 				CE5A9E6A187AB4E000181126 /* About.txt in Resources */,
+				CE7C506E187BD267000B1D61 /* test.mp4 in Resources */,
 				CE5A9E80187AB98200181126 /* Main.storyboard in Resources */,
 				CE5A9E74187AB4E000181126 /* README.txt in Resources */,
 				CE5A9E6C187AB4E000181126 /* About.txt in Resources */,
@@ -526,6 +580,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE5A9E02187AB4AC00181126 /* demo_crypoto_stream_videoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE7C5060187BCDC3000B1D61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE7C5067187BCDC3000B1D61 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +763,31 @@
 			};
 			name = Release;
 		};
+		CE7C506B187BCDC4000B1D61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CE7C506C187BCDC4000B1D61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -730,6 +817,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CE7C506A187BCDC4000B1D61 /* Build configuration list for PBXNativeTarget "cryptx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE7C506B187BCDC4000B1D61 /* Debug */,
+				CE7C506C187BCDC4000B1D61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
