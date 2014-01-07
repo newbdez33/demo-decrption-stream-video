@@ -11,6 +11,7 @@
 #import "HTTPServer.h"
 #import "DDLog.h"
 #import "DDTTYLogger.h"
+#import "DecrypotoLayer.h"
 
 // Log levels: off, error, warn, info, verbose
 static const int ddLogLevel = LOG_LEVEL_VERBOSE;
@@ -38,6 +39,7 @@ static const int ddLogLevel = LOG_LEVEL_VERBOSE;
 
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     httpServer = [[HTTPServer alloc] init];
+    [httpServer setConnectionClass:[DecrypotoLayer class]];
     [httpServer setType:@"_http._tcp."];
     [httpServer setPort:54333];
     NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
